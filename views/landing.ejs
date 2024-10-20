@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <nav class="flex items-center justify-between bg-slate-500 px-6">
+        <div class="flex-grow flex justify-center">
+            <ul class="flex space-x-6 bg-white py-2 px-6 rounded-full shadow-md border border-gray-300">
+                <li><a href="#" class="text-gray-700 hover:text-indigo-600 font-medium">About</a></li>
+                <li><a href="Notifications.html" class="text-gray-700 hover:text-indigo-600 font-medium">Notifications</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-indigo-600 font-medium">Messages</a></li>
+                <li><a href="/about" class="text-gray-700 hover:text-indigo-600 font-medium">Profile</a></li>
+            </ul>
+        </div>
+        <li class="flex space-x-2 bg-white py-2 px-3 rounded-full shadow-md border border-gray-300 hover:bg-red-700">
+            <a href="/logout" class="text-gray-700 hover:text-white font-medium">Logout</a>
+        </li>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-slate-500 text-white py-16">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold mb-4">Welcome to Freelancer's Hub</h1>
+            <p class="text-lg mb-6">Providing the best services and solutions to grow your business.</p>
+            <a href="Profilelogin.html" class="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-full hover:bg-gray-200">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-slate-300">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">Project Proposals</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <% if (users.length > 0) { %>
+                    <% users.forEach(function(user) { %>
+                        <% if (user.accountType === 'client' && user.posts.length > 0) { %>
+                            <!-- Check if the user is a client and has posts -->
+                            <% user.posts.reverse().forEach(function(post) { %>
+                                <div class="bg-white p-6 rounded-lg shadow-md">
+                                    <a href="/aboutassign/<%= post._id %>">
+                                        <img src="/imag/2751651.png" alt="Feature 1" class="mx-auto mb-4 h-64">
+                                    </a>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2 font-serif">
+                                        <%= user.username %>
+                                    </h3> <!-- Display username -->
+                                    <h1 class="text-xl font-semibold font-serif text-gray-600">
+                                        <%= post.projectTitle %>
+                                    </h1>
+                                </div>
+                            <% }) %>
+                        <% } else { %>
+                            <!-- Message for users with no posts -->
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <p class="text-gray-600 text-center">This user has no posts yet.</p>
+                            </div>
+                        <% } %>
+                    <% }) %>
+                <% } else { %>
+                    <!-- Message if there are no users -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <p class="text-gray-600 text-center">No users found.</p>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto text-center">
+            <p class="mb-4">© 2024 Freelancer's Hub. All Rights Reserved.</p>
+            <div class="space-x-4">
+                <a href="#" class="hover:text-gray-400">Privacy Policy</a>
+                <a href="#" class="hover:text-gray-400">Terms of Service</a>
+                <a href="#" class="hover:text-gray-400">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

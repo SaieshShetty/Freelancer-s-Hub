@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex justify-center items-center h-screen">
+
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md text-center" >
+        <h1 class="text-2xl font-semibold mb-6">Login</h1>
+        <div class="flex justify-center gap-4 mb-6">
+            <button id="freelancer-login" class="w-32 h-32 rounded-full border-4 border-slate-600">
+                <img src="imag/2751651.png" alt="">
+            </button>
+            <button id="client-login" class="w-32 h-32 rounded-full border-4 border-slate-600">
+                <img src="imag/Client.png" alt="">
+            </button>
+        </div>
+        <div class="login-form hidden" id="login-form">
+            <form id="loginForm" action="/" method="post" class="space-y-4">
+                <input type="hidden" name="userType" id="userType" value="">
+                
+                <div>
+                    <label for="email" class="block text-left text-gray-600">Email:</label>
+                    <input type="email" id="email" name="email" required
+                           class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:border-blue-500">
+                </div>
+
+                <div>
+                    <label for="password" class="block text-left text-gray-600">Password:</label>
+                    <input type="password" id="password" name="password" required
+                           class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:border-blue-500">
+                </div>
+                
+                <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded">
+                    Login
+                </button>
+            </form>
+            <button type="" class="w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded mt-5">
+                <a href="/create">New User</a>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("freelancer-login").addEventListener("click", function() {
+            document.getElementById("userType").value = "freelancer";
+            document.getElementById("login-form").classList.remove("hidden");
+        });
+
+        document.getElementById("client-login").addEventListener("click", function() {
+            document.getElementById("userType").value = "client";
+            document.getElementById("login-form").classList.remove("hidden");
+        });
+    </script>
+
+</body>
+</html>

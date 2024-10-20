@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900">
+
+    <!-- Profile Section -->
+    <section class="max-w-4xl mx-auto mt-10 bg-slate-700 p-8 rounded-lg shadow-lg">
+        <div class="flex flex-col items-center text-center">
+
+            <!-- Profile Picture -->
+            <div class="mb-4">
+                <img class="w-32 h-32 rounded-full border-4 border-indigo-600" src="/imag/uploads/<%= user.profilePhoto %>" alt="Profile Photo">
+            </div>
+
+            <!-- Name and Title -->
+            <h1 class="text-3xl font-bold text-white"><%= user.username %></h1>
+            <p class="text-slate-400"><%= user.accountType %></p>
+
+            <!-- Skills Section -->
+            <div class="mt-6 w-full text-left">
+                <h2 class="text-xl font-semibold text-white">Personal Info</h2>
+                <ul class="mt-2 space-y-2 text-slate-400">
+                    <li><span class="font-semibold">Age: </span><%= user.Age %></li>
+                    <li><span class="font-semibold">Email: </span><%= user.email %></li>
+                    <li><span class="font-semibold">Phone Number: </span><%= user.Phno %></li>
+                </ul>
+            </div>
+
+            <!-- Ratings Section -->
+            <div class="mt-6 w-full text-left">
+                <h2 class="text-xl font-semibold text-white">Ratings</h2>
+                <div class="mt-2 text-slate-400">
+                    <p><span class="font-semibold">Java:</span> 
+                        <span class="text-yellow-500">★★★★★</span> (5/5)</p>
+                    <p><span class="font-semibold">SQL:</span> 
+                        <span class="text-yellow-500">★★★★☆</span> (4/5)</p>
+                    <p><span class="font-semibold">Web Development:</span> 
+                        <span class="text-yellow-500">★★★★★</span> (5/5)</p>
+                </div>
+            </div>
+
+            <!-- Other Features Section -->
+            <div class="mt-6 w-full text-left text-slate-400">
+                <h2 class="text-xl font-semibold text-white">Other Features</h2>
+                <ul class="mt-2 space-y-2">
+                    <li>Project: ATM Management System (Java)</li>
+                    <li>Certified in Problem Solving (HackerRank)</li>
+                    <li>Completed Java Course (Udemy)</li>
+                </ul>
+            </div>
+
+            <div class="mt-8">
+                <a href="/edit/<%= user._id %>" class="bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-500">Edit Profile</a>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

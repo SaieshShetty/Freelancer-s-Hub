@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <nav class="flex items-center justify-between bg-slate-500 px-6">
+        <div class="flex-grow flex justify-center">
+            <ul class="flex space-x-6 bg-white py-2 px-6 rounded-full shadow-md border border-gray-300">
+                <li><a href="#" class="text-gray-700 hover:text-indigo-600 font-medium">About</a></li>
+                <li><a href="Notifications.html" class="text-gray-700 hover:text-indigo-600 font-medium">Notifications</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-indigo-600 font-medium">Messages</a></li>
+                <li><a href="Profile.html" class="text-gray-700 hover:text-indigo-600 font-medium">Profile</a></li>
+            </ul>
+        </div>
+        <li class="flex space-x-2 bg-white py-2 px-3 rounded-full shadow-md border border-gray-300 hover:bg-red-700">
+            <a href="/logout" class="text-gray-700 hover:text-white font-medium">Logout</a>
+        </li>
+    </nav>
+    
+
+    <!-- Hero Section -->
+    <section class="bg-slate-500 text-white py-16">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold mb-4">Welcome to the Client Dashboard</h1>
+            <p class="text-lg mb-6">Manage your projects and connect with freelancers.</p>
+            <a href="#post-project" class="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-full hover:bg-gray-200">Post a New Project</a>
+        </div>
+    </section>
+
+    <!-- Post a Project Section -->
+    <section id="post-project" class="py-16 bg-slate-300">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Post a New Project</h2>
+
+            <form action="/post" method="post" class="bg-white p-6 rounded-lg shadow-lg space-y-4">
+                <div>
+                    <label for="project-title" class="block text-gray-600">Project Title:</label>
+                    <input type="text" id="project-title" name="projectTitle" required
+                        class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:border-blue-500">
+                </div>
+
+                <div>
+                    <label for="project-description" class="block text-gray-600">Project Description:</label>
+                    <textarea id="project-description" name="content" rows="5" required
+                        class="w-full resize-none border border-gray-300 rounded-lg p-2 focus:outline-none focus:border-blue-500"></textarea>
+                </div>
+
+                <div>
+                    <label for="budget" class="block text-gray-600">Budget ($):</label>
+                    <input type="number" id="budget" name="budget" required
+                        class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:border-blue-500">
+                </div>
+
+                <div>
+                    <label for="deadline" class="block text-gray-600">Project Deadline:</label>
+                    <input type="date" id="deadline" name="deadline" required
+                        class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:border-blue-500">
+                </div>
+
+                <button type="submit" class="bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700">
+                    Post Project
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Messages from Freelancers Section -->
+    
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto text-center">
+            <p class="mb-4">© 2024 Freelancer's Hub. All Rights Reserved.</p>
+            <div class="space-x-4">
+                <a href="#" class="hover:text-gray-400">Privacy Policy</a>
+                <a href="#" class="hover:text-gray-400">Terms of Service</a>
+                <a href="#" class="hover:text-gray-400">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
